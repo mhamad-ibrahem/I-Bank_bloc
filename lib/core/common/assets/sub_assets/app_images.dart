@@ -7,4 +7,10 @@ mixin AppImages {
   //main
       String get avatarImage =>
       '$imageRout/Avatar.png';
+  //search
+  String get exchangeRateImage =>'$imageRout/exchange_rate.png';
+  String get exchangeImage =>'$imageRout/exchange.png';
+  String get interestRateImage =>'$imageRout/interest_rate.png';
+  String get searchBranchImage =>'$imageRout/search_branch.png';
+
 }

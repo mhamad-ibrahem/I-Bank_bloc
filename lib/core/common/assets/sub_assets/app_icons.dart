@@ -19,4 +19,6 @@ mixin AppIcons {
   String get settingsIcon => '$iconsRout/settings.png';
   String get walletIcon => '$iconsRout/wallet-43 1.png';
   String get visaIcon => '$iconsRout/visa.png';
+  //search
+  String get vietnamFlagIcon => '$iconsRout/VN.png';
 }

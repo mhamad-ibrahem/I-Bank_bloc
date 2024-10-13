@@ -5,6 +5,7 @@ import 'package:ui_block/core/common/colors/app_colors.dart';
 import 'package:ui_block/core/helpers/log_helper/log_helper.dart';
 
 import '../../../home/presentation/view/pages/home_page.dart';
+import '../../../search_features/search/presentation/view/pages/search_page.dart';
 
 part 'main_event.dart';
 part 'main_state.dart';
@@ -12,10 +13,7 @@ part 'main_state.dart';
 class MainBloc extends Bloc<MainEvent, MainState> {
   List<Widget> mainPages = [
     const HomePage(),
-    Text(
-      "Search",
-      style: TextStyle(color: AppColors().black, fontSize: 18),
-    ),
+    const SearchPage(),
     Text(
       "message",
       style: TextStyle(color: AppColors().black, fontSize: 18),

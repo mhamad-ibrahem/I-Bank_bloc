@@ -1,5 +1,8 @@
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:ui_block/core/common/size/app_size.dart';
+import 'package:ui_block/core/helpers/validation/validation_helper.dart';
+import 'package:ui_block/features/auth/forget_password/presentation/cubit/forget_password_cubit.dart';
 import '../../../../../../../core/common/colors/app_colors.dart';
 import '../../../../../../../core/routes/route_export.dart';
 import '../../../../../../../widgets/buttons/custom_button.dart';
@@ -10,8 +13,9 @@ class VerifyCodeTopPartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
     return Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Text(
           "Type a code",
@@ -26,11 +30,23 @@ class VerifyCodeTopPartWidget extends StatelessWidget {
         Row(
           children: [
             Expanded(
-              child: CustomTextFormField(
-                hint: "Code",
-                contentPadding: EdgeInsets.symmetric(
-                  horizontal: 20.w,
-                  vertical:AppSize.isTabletScreen(context: context)? 13.h:0
+              child: Form(
+                autovalidateMode: AutovalidateMode.onUserInteraction,
+                key: forgetPasswordCubit.codeFormKey,
+                child: CustomTextFormField(
+                  hint: "Code",
+                  textEditingController: forgetPasswordCubit.otpCode,
+                  validator: (value) {
+                    return ValidationHelper.validate(
+                        value: value!,
+                        validationType: ValidationType.number,
+                        minValue: 6,
+                        maxValue: 6);
+                  },
+                  contentPadding: EdgeInsets.symmetric(
+                      horizontal: 20.w,
+                      vertical:
+                          AppSize.isTabletScreen(context: context) ? 13.h : 0),
                 ),
               ),
             ),

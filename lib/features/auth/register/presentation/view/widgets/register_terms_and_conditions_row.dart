@@ -12,6 +12,7 @@ class RegisterTermsAndConditionsRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final registerBloc = context.read<RegisterBloc>();
     return Row(
       children: [
         BlocBuilder<RegisterBloc, RegisterState>(
@@ -20,13 +21,12 @@ class RegisterTermsAndConditionsRow extends StatelessWidget {
               
                 activeColor: AppColors().white,
                 fillColor: WidgetStateProperty.all(
-                    context.read<RegisterBloc>().acceptTermsAndConditions
+                   registerBloc.acceptTermsAndConditions
                         ? AppColors.primaryColor
                         : AppColors().white),
-                value: context.read<RegisterBloc>().acceptTermsAndConditions,
+                value: registerBloc.acceptTermsAndConditions,
                 onChanged: (val) {
-                  context
-                      .read<RegisterBloc>()
+                registerBloc
                       .add(const RegisterEvent.acceptTerms());
                 });
           },

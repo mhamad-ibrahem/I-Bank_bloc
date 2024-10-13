@@ -10,6 +10,7 @@ class VerifyCodeBottomPartWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+      final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -26,7 +27,7 @@ class VerifyCodeBottomPartWidget extends StatelessWidget {
                   .textTheme
                   .displayMedium!
                   .copyWith(fontSize: 14.sp, color: AppColors.primaryColor),
-              text: '(+84) 0398829xxx\n\n',
+              text: '(+971) ${forgetPasswordCubit.phoneNumber.text}\n\n',
             ),
             TextSpan(
               text:
@@ -45,7 +46,7 @@ class VerifyCodeBottomPartWidget extends StatelessWidget {
             child: CustomButton(
                 buttonBody: "Send",
                 onTap: () {
-                  context.read<ForgetPasswordCubit>().verifyCode(context);
+                forgetPasswordCubit.verifyCode(context);
                 }))
       ],
     );

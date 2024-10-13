@@ -1,4 +1,8 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android">
+ <!-- Inernet permission --> 
+    <uses-permission android:name="android.permission.INTERNET" />
+    <!-- local notifications -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED"/>
     <application
         android:label="ui_block"
         android:name="${applicationName}"
@@ -19,6 +23,10 @@
               android:name="io.flutter.embedding.android.NormalTheme"
               android:resource="@style/NormalTheme"
               />
+               <!-- fire base app icon -->
+            <meta-data android:name="com.google.firebase.messaging.default_notification_icon"
+              android:resource="@drawable/app_icon" />
+              <!-- end of  fire base app icon-->
             <intent-filter>
                 <action android:name="android.intent.action.MAIN"/>
                 <category android:name="android.intent.category.LAUNCHER"/>

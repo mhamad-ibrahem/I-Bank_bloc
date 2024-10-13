@@ -16,8 +16,9 @@ class CustomBottomNavigationBarTapsWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
-      child: Container(
-        
+      child: AnimatedContainer(
+        curve: Curves.easeInOut,
+        duration: const Duration(milliseconds: 700),
         padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 10.h),
         decoration: BoxDecoration(
             color: isSelected ? AppColors.primaryColor : AppColors().white,

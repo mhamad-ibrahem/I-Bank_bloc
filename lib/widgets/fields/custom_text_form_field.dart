@@ -74,15 +74,7 @@ class CustomTextFormField extends StatelessWidget {
           enabled: isEnable,
           filled: isField,
           suffixIcon: suffixIcon,
-          prefixIcon: icon != null
-              ? Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 10.w),
-                  child: GestureDetector(
-                    onTap: onLeadingTap,
-                    child: icon,
-                  ),
-                )
-              : null,
+          prefix:icon ,
           contentPadding: contentPadding ??
                EdgeInsets.only(left: 0.w, right: 0.w, top: 20.h, bottom: 20.h),
           floatingLabelBehavior: FloatingLabelBehavior.always,
@@ -93,16 +85,16 @@ class CustomTextFormField extends StatelessWidget {
               .copyWith(color: AppColors().grey2, fontSize: 12.sp),
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(radius ?? 15),
-              borderSide: const BorderSide(color: AppColors.primaryColor, width: 2)),
+              borderSide: const BorderSide(color: AppColors.primaryColor, width: 1)),
           enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(radius ?? 15),
-              borderSide: BorderSide(color: AppColors().grey2, width: 2)),
+              borderSide: BorderSide(color: AppColors().grey2, width: 1)),
           disabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(radius ?? 15),
               borderSide: BorderSide(color: AppColors().grey2)),
           errorBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(radius ?? 15),
-              borderSide: BorderSide(color: AppColors().red, width: 2)),
+              borderSide: BorderSide(color: AppColors().red, width:1)),
           border: OutlineInputBorder(
             borderRadius: BorderRadius.circular(radius ?? 15),
           )),

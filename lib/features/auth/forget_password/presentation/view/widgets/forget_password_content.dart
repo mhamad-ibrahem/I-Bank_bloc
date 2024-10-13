@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ui_block/core/helpers/validation/validation_helper.dart';
 import 'package:ui_block/features/auth/forget_password/presentation/cubit/forget_password_cubit.dart';
 import '../../../../../../core/common/colors/app_colors.dart';
 import '../../../../../../core/common/size/app_size.dart';
@@ -12,6 +13,7 @@ class ForgetPasswordContentWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final forgetPasswordCubit = context.read<ForgetPasswordCubit>();
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
@@ -25,9 +27,23 @@ class ForgetPasswordContentWidget extends StatelessWidget {
         SizedBox(
           height: 20.h,
         ),
-        CustomTextFormField(
-          hint: "(+84)",
-          contentPadding: EdgeInsets.symmetric(horizontal: 20.w, vertical:AppSize.isTabletScreen(context: context)? 13.h:0),
+        Form(
+          key: forgetPasswordCubit.formKey,
+          autovalidateMode: AutovalidateMode.onUserInteraction,
+          child: CustomTextFormField(
+            hint: "(+84)",
+            contentPadding: EdgeInsets.symmetric(
+                horizontal: 20.w,
+                vertical: AppSize.isTabletScreen(context: context) ? 13.h : 0),
+            textEditingController: forgetPasswordCubit.phoneNumber,
+            validator: (val) {
+              return ValidationHelper.validate(
+                  value: val!,
+                  validationType: ValidationType.number,
+                  minValue: 8,
+                  maxValue: 12);
+            },
+          ),
         ),
         SizedBox(
           height: 20.h,

@@ -472,18 +472,21 @@ mixin _$RegisterEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() changeObscure,
     required TResult Function() acceptTerms,
+    required TResult Function(BuildContext context) createAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? changeObscure,
     TResult? Function()? acceptTerms,
+    TResult? Function(BuildContext context)? createAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? changeObscure,
     TResult Function()? acceptTerms,
+    TResult Function(BuildContext context)? createAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -491,18 +494,21 @@ mixin _$RegisterEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeObscure value) changeObscure,
     required TResult Function(_AcceptTermsEvent value) acceptTerms,
+    required TResult Function(_CreateAccount value) createAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeObscure value)? changeObscure,
     TResult? Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult? Function(_CreateAccount value)? createAccount,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeObscure value)? changeObscure,
     TResult Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult Function(_CreateAccount value)? createAccount,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -566,6 +572,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult when<TResult extends Object?>({
     required TResult Function() changeObscure,
     required TResult Function() acceptTerms,
+    required TResult Function(BuildContext context) createAccount,
   }) {
     return changeObscure();
   }
@@ -575,6 +582,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? changeObscure,
     TResult? Function()? acceptTerms,
+    TResult? Function(BuildContext context)? createAccount,
   }) {
     return changeObscure?.call();
   }
@@ -584,6 +592,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? changeObscure,
     TResult Function()? acceptTerms,
+    TResult Function(BuildContext context)? createAccount,
     required TResult orElse(),
   }) {
     if (changeObscure != null) {
@@ -597,6 +606,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeObscure value) changeObscure,
     required TResult Function(_AcceptTermsEvent value) acceptTerms,
+    required TResult Function(_CreateAccount value) createAccount,
   }) {
     return changeObscure(this);
   }
@@ -606,6 +616,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeObscure value)? changeObscure,
     TResult? Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult? Function(_CreateAccount value)? createAccount,
   }) {
     return changeObscure?.call(this);
   }
@@ -615,6 +626,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeObscure value)? changeObscure,
     TResult Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult Function(_CreateAccount value)? createAccount,
     required TResult orElse(),
   }) {
     if (changeObscure != null) {
@@ -668,6 +680,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult when<TResult extends Object?>({
     required TResult Function() changeObscure,
     required TResult Function() acceptTerms,
+    required TResult Function(BuildContext context) createAccount,
   }) {
     return acceptTerms();
   }
@@ -677,6 +690,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? changeObscure,
     TResult? Function()? acceptTerms,
+    TResult? Function(BuildContext context)? createAccount,
   }) {
     return acceptTerms?.call();
   }
@@ -686,6 +700,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? changeObscure,
     TResult Function()? acceptTerms,
+    TResult Function(BuildContext context)? createAccount,
     required TResult orElse(),
   }) {
     if (acceptTerms != null) {
@@ -699,6 +714,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeObscure value) changeObscure,
     required TResult Function(_AcceptTermsEvent value) acceptTerms,
+    required TResult Function(_CreateAccount value) createAccount,
   }) {
     return acceptTerms(this);
   }
@@ -708,6 +724,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeObscure value)? changeObscure,
     TResult? Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult? Function(_CreateAccount value)? createAccount,
   }) {
     return acceptTerms?.call(this);
   }
@@ -717,6 +734,7 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeObscure value)? changeObscure,
     TResult Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult Function(_CreateAccount value)? createAccount,
     required TResult orElse(),
   }) {
     if (acceptTerms != null) {
@@ -728,4 +746,145 @@ class _$AcceptTermsEventImpl implements _AcceptTermsEvent {
 
 abstract class _AcceptTermsEvent implements RegisterEvent {
   const factory _AcceptTermsEvent() = _$AcceptTermsEventImpl;
+}
+
+/// @nodoc
+abstract class _$$CreateAccountImplCopyWith<$Res> {
+  factory _$$CreateAccountImplCopyWith(
+          _$CreateAccountImpl value, $Res Function(_$CreateAccountImpl) then) =
+      __$$CreateAccountImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$CreateAccountImplCopyWithImpl<$Res>
+    extends _$RegisterEventCopyWithImpl<$Res, _$CreateAccountImpl>
+    implements _$$CreateAccountImplCopyWith<$Res> {
+  __$$CreateAccountImplCopyWithImpl(
+      _$CreateAccountImpl _value, $Res Function(_$CreateAccountImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = freezed,
+  }) {
+    return _then(_$CreateAccountImpl(
+      context: freezed == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$CreateAccountImpl implements _CreateAccount {
+  const _$CreateAccountImpl({required this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'RegisterEvent.createAccount(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$CreateAccountImpl &&
+            const DeepCollectionEquality().equals(other.context, context));
+  }
+
+  @override
+  int get hashCode =>
+      Object.hash(runtimeType, const DeepCollectionEquality().hash(context));
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$CreateAccountImplCopyWith<_$CreateAccountImpl> get copyWith =>
+      __$$CreateAccountImplCopyWithImpl<_$CreateAccountImpl>(this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() changeObscure,
+    required TResult Function() acceptTerms,
+    required TResult Function(BuildContext context) createAccount,
+  }) {
+    return createAccount(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? changeObscure,
+    TResult? Function()? acceptTerms,
+    TResult? Function(BuildContext context)? createAccount,
+  }) {
+    return createAccount?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? changeObscure,
+    TResult Function()? acceptTerms,
+    TResult Function(BuildContext context)? createAccount,
+    required TResult orElse(),
+  }) {
+    if (createAccount != null) {
+      return createAccount(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeObscure value) changeObscure,
+    required TResult Function(_AcceptTermsEvent value) acceptTerms,
+    required TResult Function(_CreateAccount value) createAccount,
+  }) {
+    return createAccount(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeObscure value)? changeObscure,
+    TResult? Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult? Function(_CreateAccount value)? createAccount,
+  }) {
+    return createAccount?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeObscure value)? changeObscure,
+    TResult Function(_AcceptTermsEvent value)? acceptTerms,
+    TResult Function(_CreateAccount value)? createAccount,
+    required TResult orElse(),
+  }) {
+    if (createAccount != null) {
+      return createAccount(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _CreateAccount implements RegisterEvent {
+  const factory _CreateAccount({required final BuildContext context}) =
+      _$CreateAccountImpl;
+
+  BuildContext get context;
+  @JsonKey(ignore: true)
+  _$$CreateAccountImplCopyWith<_$CreateAccountImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

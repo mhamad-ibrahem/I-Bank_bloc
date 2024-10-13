@@ -22,7 +22,7 @@ class CustomHorizontalDivider extends StatelessWidget {
       indent: leftPadding ,
       endIndent: rightPadding ,
       height: height ,
-      color: color ?? AppColors().grey,
+      color: color ?? AppColors().lightGrey2,
       thickness: thickness ,
     );
   }

@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "688875806249",
+    "project_id": "i-bank-7f3b8",
+    "storage_bucket": "i-bank-7f3b8.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:688875806249:android:2a40c44a658fb094e2c638",
+        "android_client_info": {
+          "package_name": "com.example.ui_block"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBvTGHHF6ziN-dGUpNbubu0FC0fTV8Y8MI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

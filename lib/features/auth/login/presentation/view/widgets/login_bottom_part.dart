@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ui_block/features/auth/login/presentation/block/login_bloc.dart';
 import '../../../../../../core/common/assets/app_assets.dart';
 import '../../../../../../core/common/colors/app_colors.dart';
 import '../../../../../../core/common/size/app_size.dart';
@@ -20,7 +22,9 @@ class LoginBottomPartWidget extends StatelessWidget {
                 buttonWidth: AppSize.screenWidth(context: context),
                 buttonBody: "Sign in",
                 onTap: () {
-                  context.go(AppRoutes().mainRoute);
+                  context
+                      .read<LoginBloc>()
+                      .add(LoginEvent.loginEventUseCase(context: context));
                 })),
         Center(
           child: GestureDetector(

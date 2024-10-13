@@ -314,32 +314,38 @@ mixin _$LoginEvent {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() changeObscure,
+    required TResult Function(BuildContext context) loginEventUseCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? changeObscure,
+    TResult? Function(BuildContext context)? loginEventUseCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? changeObscure,
+    TResult Function(BuildContext context)? loginEventUseCase,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeObscure value) changeObscure,
+    required TResult Function(_LoginUseCaseEvent value) loginEventUseCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeObscure value)? changeObscure,
+    TResult? Function(_LoginUseCaseEvent value)? loginEventUseCase,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeObscure value)? changeObscure,
+    TResult Function(_LoginUseCaseEvent value)? loginEventUseCase,
     required TResult orElse(),
   }) =>
       throw _privateConstructorUsedError;
@@ -402,6 +408,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() changeObscure,
+    required TResult Function(BuildContext context) loginEventUseCase,
   }) {
     return changeObscure();
   }
@@ -410,6 +417,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? changeObscure,
+    TResult? Function(BuildContext context)? loginEventUseCase,
   }) {
     return changeObscure?.call();
   }
@@ -418,6 +426,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? changeObscure,
+    TResult Function(BuildContext context)? loginEventUseCase,
     required TResult orElse(),
   }) {
     if (changeObscure != null) {
@@ -430,6 +439,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ChangeObscure value) changeObscure,
+    required TResult Function(_LoginUseCaseEvent value) loginEventUseCase,
   }) {
     return changeObscure(this);
   }
@@ -438,6 +448,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ChangeObscure value)? changeObscure,
+    TResult? Function(_LoginUseCaseEvent value)? loginEventUseCase,
   }) {
     return changeObscure?.call(this);
   }
@@ -446,6 +457,7 @@ class _$ChangeObscureImpl implements _ChangeObscure {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ChangeObscure value)? changeObscure,
+    TResult Function(_LoginUseCaseEvent value)? loginEventUseCase,
     required TResult orElse(),
   }) {
     if (changeObscure != null) {
@@ -457,4 +469,139 @@ class _$ChangeObscureImpl implements _ChangeObscure {
 
 abstract class _ChangeObscure implements LoginEvent {
   const factory _ChangeObscure() = _$ChangeObscureImpl;
+}
+
+/// @nodoc
+abstract class _$$LoginUseCaseEventImplCopyWith<$Res> {
+  factory _$$LoginUseCaseEventImplCopyWith(_$LoginUseCaseEventImpl value,
+          $Res Function(_$LoginUseCaseEventImpl) then) =
+      __$$LoginUseCaseEventImplCopyWithImpl<$Res>;
+  @useResult
+  $Res call({BuildContext context});
+}
+
+/// @nodoc
+class __$$LoginUseCaseEventImplCopyWithImpl<$Res>
+    extends _$LoginEventCopyWithImpl<$Res, _$LoginUseCaseEventImpl>
+    implements _$$LoginUseCaseEventImplCopyWith<$Res> {
+  __$$LoginUseCaseEventImplCopyWithImpl(_$LoginUseCaseEventImpl _value,
+      $Res Function(_$LoginUseCaseEventImpl) _then)
+      : super(_value, _then);
+
+  @pragma('vm:prefer-inline')
+  @override
+  $Res call({
+    Object? context = null,
+  }) {
+    return _then(_$LoginUseCaseEventImpl(
+      context: null == context
+          ? _value.context
+          : context // ignore: cast_nullable_to_non_nullable
+              as BuildContext,
+    ));
+  }
+}
+
+/// @nodoc
+
+class _$LoginUseCaseEventImpl implements _LoginUseCaseEvent {
+  const _$LoginUseCaseEventImpl({required this.context});
+
+  @override
+  final BuildContext context;
+
+  @override
+  String toString() {
+    return 'LoginEvent.loginEventUseCase(context: $context)';
+  }
+
+  @override
+  bool operator ==(Object other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$LoginUseCaseEventImpl &&
+            (identical(other.context, context) || other.context == context));
+  }
+
+  @override
+  int get hashCode => Object.hash(runtimeType, context);
+
+  @JsonKey(ignore: true)
+  @override
+  @pragma('vm:prefer-inline')
+  _$$LoginUseCaseEventImplCopyWith<_$LoginUseCaseEventImpl> get copyWith =>
+      __$$LoginUseCaseEventImplCopyWithImpl<_$LoginUseCaseEventImpl>(
+          this, _$identity);
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() changeObscure,
+    required TResult Function(BuildContext context) loginEventUseCase,
+  }) {
+    return loginEventUseCase(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? changeObscure,
+    TResult? Function(BuildContext context)? loginEventUseCase,
+  }) {
+    return loginEventUseCase?.call(context);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? changeObscure,
+    TResult Function(BuildContext context)? loginEventUseCase,
+    required TResult orElse(),
+  }) {
+    if (loginEventUseCase != null) {
+      return loginEventUseCase(context);
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ChangeObscure value) changeObscure,
+    required TResult Function(_LoginUseCaseEvent value) loginEventUseCase,
+  }) {
+    return loginEventUseCase(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ChangeObscure value)? changeObscure,
+    TResult? Function(_LoginUseCaseEvent value)? loginEventUseCase,
+  }) {
+    return loginEventUseCase?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ChangeObscure value)? changeObscure,
+    TResult Function(_LoginUseCaseEvent value)? loginEventUseCase,
+    required TResult orElse(),
+  }) {
+    if (loginEventUseCase != null) {
+      return loginEventUseCase(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _LoginUseCaseEvent implements LoginEvent {
+  const factory _LoginUseCaseEvent({required final BuildContext context}) =
+      _$LoginUseCaseEventImpl;
+
+  BuildContext get context;
+  @JsonKey(ignore: true)
+  _$$LoginUseCaseEventImplCopyWith<_$LoginUseCaseEventImpl> get copyWith =>
+      throw _privateConstructorUsedError;
 }

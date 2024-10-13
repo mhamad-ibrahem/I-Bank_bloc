@@ -1,11 +1,17 @@
+import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:ui_block/core/helpers/log_helper/log_helper.dart';
 import 'core/injection/app_injection.dart' as di;
 import 'core/common/colors/app_colors.dart';
 import 'core/routes/app_router.dart';
 import 'core/services/app_services.dart';
 import 'core/theme/theme.dart';
+
+Future<void> firebaseMessagingBackgroundHandler(RemoteMessage message) async {
+  LogHelper.logSuccess("Handling a background message: ${message.messageId}");
+}
 
 final GlobalKey<NavigatorState> navigatorKey = GlobalKey<NavigatorState>();
 void main() async {
