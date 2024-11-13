@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:ui_block/core/common/assets/app_assets.dart';
@@ -19,7 +20,7 @@ class LoginPage extends StatelessWidget {
       body: BlocProvider(
         create: (context) => di.sl<LoginBloc>(),
         child: CustomAuthSharedSheetWidget(
-        title: "Welcome Back",
+        title:'Welcome Back'.tr() ,
         subTitle: "Hello there, sign in to continue",
         image: AppAssets().appIcon,
         child: const Column(

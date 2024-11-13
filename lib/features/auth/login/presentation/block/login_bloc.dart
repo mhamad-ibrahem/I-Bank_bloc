@@ -13,6 +13,7 @@ import 'package:ui_block/shared/widgets/toast/cherry_toast.dart';
 import '../../../../../core/helpers/log_helper/log_helper.dart';
 import '../../../../../core/helpers/user_local_data.dart';
 import '../../../../../core/routes/constant/app_routes.dart';
+import '../../../../native_with_flutter/sum_numbers_native_channel.dart';
 import '../../data/model/login_model.dart';
 part 'login_state.dart';
 part 'login_event.dart';
@@ -44,6 +45,8 @@ class LoginBloc extends Bloc<LoginEvent, LoginState> {
   login({
     required BuildContext context,
   }) async {
+    SumNumbersNativeChannel sumNumbersNativeChannel = SumNumbersNativeChannel();
+    double sum = await sumNumbersNativeChannel.getSumNumbersBuNative(num1: 2.0, num2: 4.0);
     if (formKey.currentState!.validate()) {
       showLoadingDialog(context: context);
       ApiResponse response = await loginUseCase.execute(LoginModel(

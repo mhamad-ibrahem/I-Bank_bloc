@@ -21,7 +21,7 @@ mixin VerifyCodeCubit on Cubit<ForgetPasswordState> {
         verificationId: verificationId,
         verifyCode: otpCode.text,
         codeSentCallBack: () {
-          context.push(AppRoutes().changePassword);
+          context.push(AppRoutes().changePasswordRoute);
         },
       ));
     }

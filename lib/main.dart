@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 import 'package:firebase_messaging/firebase_messaging.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -20,7 +21,16 @@ void main() async {
       SystemUiOverlayStyle(statusBarColor: AppColors().black));
   await di.injection();
   await initialServices();
-  runApp(const MyApp());
+  runApp(
+    EasyLocalization(
+        supportedLocales: const [
+          Locale('ar'),
+          Locale('en'),
+        ],
+        path: 'assets/translations',
+        fallbackLocale: const Locale('ar'),
+        child: const MyApp()),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -33,12 +43,12 @@ class MyApp extends StatelessWidget {
       splitScreenMode: true,
       builder: (BuildContext context, Widget? child) {
         return MaterialApp.router(
+          localizationsDelegates: context.localizationDelegates,
+          supportedLocales: context.supportedLocales,
+          locale: context.locale,
           debugShowCheckedModeBanner: false,
           theme: AppTheme.lightThemeArLang,
           routerConfig: AppRouter.router,
-          // translations: Localization(),
-          // locale: AppServices.localizationController?.language,
-          // getPages: AppRouter.getPages,
         );
       },
     );

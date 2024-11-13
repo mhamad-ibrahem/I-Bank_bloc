@@ -1,3 +1,4 @@
+import 'package:easy_localization/easy_localization.dart';
 
 import '../../features/splash/data/model/local_user_data_model.dart';
 import '../local_storage/get_storage.dart';
@@ -9,10 +10,7 @@ class AppServices {
   static LocalUserData? localUserData;
   Future<AppServices> init() async {
     await LocalStorageService.init();
-    // localizationController = await Get.put(LocalizationController());
-    // await Firebase.initializeApp(
-    //   options: DefaultFirebaseOptions.currentPlatform,
-    // );
+    await EasyLocalization.ensureInitialized();
     return this;
   }
 }

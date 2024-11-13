@@ -768,10 +768,10 @@ class __$$CreateAccountImplCopyWithImpl<$Res>
   @pragma('vm:prefer-inline')
   @override
   $Res call({
-    Object? context = freezed,
+    Object? context = null,
   }) {
     return _then(_$CreateAccountImpl(
-      context: freezed == context
+      context: null == context
           ? _value.context
           : context // ignore: cast_nullable_to_non_nullable
               as BuildContext,
@@ -797,12 +797,11 @@ class _$CreateAccountImpl implements _CreateAccount {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$CreateAccountImpl &&
-            const DeepCollectionEquality().equals(other.context, context));
+            (identical(other.context, context) || other.context == context));
   }
 
   @override
-  int get hashCode =>
-      Object.hash(runtimeType, const DeepCollectionEquality().hash(context));
+  int get hashCode => Object.hash(runtimeType, context);
 
   @JsonKey(ignore: true)
   @override
